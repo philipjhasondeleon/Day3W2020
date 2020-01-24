@@ -32,7 +32,7 @@ public class Array
 
         y4 = new int [3] [3];
 
-        System.out.println("Using Compact for(:)");
+        System.out.println("Using Compact for: ");
         for (int p:d)
         {
             System.out.println(p);
@@ -40,6 +40,7 @@ public class Array
 
         findArray();
         stringArrayHandling();
+        reverseString();
 
     }
 
@@ -98,10 +99,42 @@ public class Array
         car[8] = "f";
         car[9] = "g";
 
+        String reverseStrings [] = new String[carStrings.length];
+        String zigzagStrings [] = new String[carStrings.length];
+
         for(int i=0; i < car.length; i++)
         {
             System.out.println(car[i]);
         }
+    }
+
+    public static void reverseString(String s)
+    {
+        String temp = new String();
+        char names[] = s.toCharArray();
+        int len = names.length - 1;
+        for(int i = 0, j = len - 1; i < len / 2; i++, j--)
+        {
+            char t = names[i];
+            names[i] = names[j];
+            names[i] = t;
+        }
+        temp = new String(names);
+        return temp;
+    }
+
+    public static void zigZagMyString(String s)
+    {
+       String temp;
+       char names[] = s.toCharArray();
+       char output[] = s.toCharArray();
+       int len = names.length;
+       int count = len - len % 2;
+
+       for(int i = 0; i < count; i+=2)
+       {
+           if (len % 2 == 0 && i == len / 2)
+       }
     }
 
 }
